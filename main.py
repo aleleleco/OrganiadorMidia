@@ -52,6 +52,8 @@ def le_multiplos_arquivos():
             lendo do Properties do arquivo
             lendo informações do EXIF do arquivo
             Lendo informa de um JSON com os dados do arquivo
+
+            :return passa os arquivos para pasta especifica gerando log e uma tela de finalização
     :return passa os arquivos para pasta especifica gerando log e uma tela de finalização
     """
     
