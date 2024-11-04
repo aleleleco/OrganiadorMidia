@@ -1,0 +1,50 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<p></p>
+<div class="div_padrao">
+    <form action="{{ url_for('le_multiplos_arquivos') }}" method="post">
+        <p>
+            <label>Pasta Raiz dos arquivos:</label>
+            <input type="text" name="patch" id="patch" placeholder="Pasta raiz da busca">
+
+        </p>
+        <p>
+            <label>Pasta Raiz de destino:</label>
+            <input type="text" name="patchDestino" id="patchDestino" placeholder="Pasta raiz de destino">
+        </p>
+        <p>Tipos de imagens para buscar:</p>
+        <label>JPG: </label>
+        <input type="checkbox" name="jpg" id="jpg">
+        <label>PNG: </label>
+        <input type="checkbox" name="png" id="png">
+        <label>HEIC: </label>
+        <input type="checkbox" name="heic" id="heic">
+        <p>Outros tipos de midias para buscar:</p>
+        <label>MP4: </label>
+        <input type="checkbox" name="mp4" id="mp4">
+        <p>
+            <label for="tipo_busca">Origem das informações:</label>
+            <select id="tipo_busca", name="tipo_busca">
+                <option value="exif">EXIF - Melhor opção quando disponivel, comum e imagens de celulares e cameras</option>
+                <option value="json">JSON - Buscar dados dos arquivos de Json (arquivos exportados google takeout</option>
+                <option value="propriedades">PROPRIEDADES - Buscar das propriedades dos arquivos - Quando não tem informação EXIF</option>
+            </select>
+
+        </p>
+        <p>
+            <label style="color: red;">Deletar arqruivos lidos, faz com que após a copia dos arquivos todos os arquivos
+                copiados sejam apagados da origem, tenha um bakcup para utilizar este recurso</label>
+            <input type="checkbox" name="deleta_copiados" id="deleta_copiados">
+        </p>
+        <button type="submit">Organizar Arquivos</button>
+    </form>
+</div>
+<p></p>
+<div class="div_rodape">
+    © 2024 Alessandro Silva. Todos os direitos reservados. Este software é fornecido sob a licença de uso livre, não é
+    liberado para uso comercial.
+    Para mais informações, entre em contato com o desenvolvedor em ale.leleco@gmail.com ou visite o repositório no
+    GitHub: link para o GitHub.
+</div>
+
+{% endblock %}
